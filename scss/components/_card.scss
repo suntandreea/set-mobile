@@ -1,0 +1,11 @@
+.card {
+  max-width: 1000px; 
+  background: var(--main-light-color);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+}

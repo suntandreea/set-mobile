@@ -1,0 +1,33 @@
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 0 20px;
+  background: var(--accent-color);
+
+  img {
+    height: 60px;
+  }
+}
+
+nav {
+  height: 60px;
+  font-size: 1.1rem;
+  
+
+  ul {
+    gap: 10px;
+  }
+
+  li {
+    padding: 6px;
+    color: var(--main-light-color);
+    &:last-child {
+      border: 1px solid var(--main-light-color);
+      border-radius: 3px;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

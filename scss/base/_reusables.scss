@@ -1,0 +1,26 @@
+.f-df{
+  display: flex;
+}
+
+.f-c-c {
+  justify-content: center;
+  align-items: center;
+}
+
+.f-sb-c {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.f-r-nw {
+  flex-flow: row nowrap;
+}
+
+.f-c-nw {
+  flex-flow: column nowrap;
+}
+
+.bg-m-l {
+  background: var(--main-light-color);
+  color: var(--main-dark-color);
+}
