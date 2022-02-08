@@ -1,0 +1,29 @@
+footer {
+  background: var(--b-gray-2);
+  color: var(--b-gray-5);
+  padding: 60px;
+}
+
+.social {
+  font-size: 1.7rem;
+  ul {
+    gap: 30px;
+  }
+}
+
+.copyright {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: var(--secondary-light-color);
+  span{
+    padding: 0 20px;
+    a {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+  }
+  li:first-child span{
+    border-right: 1px solid var(--b-gray-3);
+  }
+
+}

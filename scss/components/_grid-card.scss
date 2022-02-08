@@ -1,0 +1,72 @@
+%divider-h {
+  width: calc(100% - 60px);
+  height: 2px;
+}
+
+%divider-v {
+  width: 2px;
+  height: 100%;
+}
+
+.grid {
+  box-sizing: border-box;
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+
+  .grid-cell {
+    gap: 20px;
+    padding: 60px;
+    position: relative;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: var(--b-gray-2);
+    }
+
+    &:nth-child(odd):not(:nth-last-of-type(2)):not(:nth-last-of-type(1)) {
+      &::before {
+        @extend %divider-h;
+        bottom: 0;
+        right: 0;
+      }
+    }
+
+    &:nth-child(even):not(:nth-last-of-type(1)) {
+      &::before {
+        @extend %divider-h;
+        bottom: 0;
+        left: 0;
+      }
+    }
+
+    &:nth-child(odd) {
+      &::after {
+        @extend %divider-v;
+        right: 0;
+      }
+      &:first-of-type, &:nth-last-of-type(2), &:nth-last-of-type(1) {
+        &::after {
+          height: calc(100% - 60px);        
+        }
+      }
+      &:first-of-type {
+        &::after {
+          bottom: 0;        
+        }
+      }
+      &:nth-last-of-type(2), &:nth-last-of-type(1) {
+        &::after {
+          top: 0;
+        }
+      }
+    }
+
+    .icon {
+      @include round(100px);
+      background: var(--accent-color);
+      color: var(--main-light-color);
+      font-size: 40px;
+    }
+  }
+}

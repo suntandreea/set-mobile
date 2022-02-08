@@ -1,0 +1,27 @@
+.newsletter {
+  padding: 60px 10px;
+  background: var(--accent-color);
+  color: var(--main-light-color);
+  gap: 30px;
+  h2 {
+    color: inherit;
+  }
+
+  input[type=email] {
+    background: var(--light-accent-color);
+    border: none;
+    outline: none;
+    width: 300px;
+    height: 50px;
+    border-radius: 3px;
+    margin-right: 10px;
+    padding: 6px 20px;
+    color: var(--main-light-color);
+  }
+
+  input[type=submit] {
+    background: var(--main-light-color);
+    color: var(--accent-color);
+
+  }
+}

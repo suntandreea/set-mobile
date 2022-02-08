@@ -1,0 +1,34 @@
+.contact {
+  margin: 30px auto;
+
+  form {
+    margin: 10px auto;
+    padding: 30px;
+    gap: 10px;
+    width: calc(var(--card-size) - 30%);
+
+    div {
+      gap: 10px;
+      input {
+        flex-grow: 1;
+      }
+    }
+
+    input[type='text'],
+    input[type='email'],
+    textarea {
+      border: 1px solid var(--b-gray-2);
+      border-radius: 3px;
+      background: var(--b-gray-1);
+      padding: 12px;
+      color: var(--b-gray-7);
+      outline: none;
+    }
+    input[type='submit'] {
+      background: var(--secondary-dark-color);
+      border-color: var(--secondary-dark-color);
+      width: 180px;
+      margin: 0 auto;
+    }
+  }
+}
