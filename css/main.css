@@ -209,8 +209,7 @@ input[type='submit'] {
 
 .menu.accent {
   background: var(--accent-color);
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 3;
@@ -703,6 +702,21 @@ tfoot {
   .contact form input[type='submit'] {
     width: 100%;
   }
+}
+
+#confirmation {
+  background: var(--accent-color);
+  border-radius: 3px;
+  color: var(--main-light-color);
+  font-weight: 400;
+  min-width: 200px;
+  padding: 8px 0;
+  margin: 0 auto;
+  display: none;
+}
+
+#confirmation.success {
+  display: block;
 }
 
 footer {
