@@ -6,8 +6,14 @@ footer {
 
 .social {
   font-size: 1.7rem;
+  @media screen and (max-width: 700px) {
+    font-size: 1.6rem;
+  }
   ul {
     gap: 30px;
+    @media screen and (max-width: 700px) {
+      gap: 20px;
+    }
   }
 }
 
@@ -15,15 +21,20 @@ footer {
   margin-top: 30px;
   font-size: 0.9rem;
   color: var(--secondary-light-color);
-  span{
+  span {
     padding: 0 20px;
+    @media screen and (max-width: 700px) {
+      padding: 0;
+    }
     a {
       text-decoration: underline;
       text-decoration-style: dotted;
     }
   }
-  li:first-child span{
+  li:first-child span {
     border-right: 1px solid var(--b-gray-3);
+    @media screen and (max-width: 700px) {
+      border: none;
+    }
   }
-
 }

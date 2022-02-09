@@ -1,19 +1,20 @@
 .contact {
   margin: 30px auto;
-
   form {
     margin: 10px auto;
     padding: 30px;
     gap: 10px;
-    width: calc(var(--card-size) - 30%);
-
+    width: calc(var(--card-size) - 380px);
+    @media screen and (max-width: 700px) {
+      width: calc(100% - 40px);
+      padding: 40px 20px;
+    }
     div {
       gap: 10px;
       input {
         flex-grow: 1;
       }
     }
-
     input[type='text'],
     input[type='email'],
     textarea {
@@ -29,6 +30,9 @@
       border-color: var(--secondary-dark-color);
       width: 180px;
       margin: 0 auto;
+      @media screen and (max-width: 400px) {
+        width: 100%;
+      }
     }
   }
 }

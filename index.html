@@ -9,35 +9,40 @@
       src="https://kit.fontawesome.com/4b39ae91a0.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/script.js" defer></script>
     <title>Aqmeter</title>
   </head>
   <body>
-    <header>
-      <div class="menu f-f f-jsb f-aic f-dr">
-        <img
-          src="https://aqmeter.com/images/aqmeterLogoWhite.png"
-          alt="Aqmeter logo"
-        />
-        <nav class="f-f f-jc f-aic f-dr">
-          <ul class="f-f f-jsb f-aic f-dr">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Tutorials</a></li>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Login</a></li>
-          </ul>
-        </nav>
+    <div class="banner"></div>
+    <header class="menu f-f f-jsb f-aic f-dr">
+      <img
+        src="https://aqmeter.com/images/aqmeterLogoWhite.png"
+        alt="Aqmeter logo"
+      />
+      <nav class="f-f f-jc f-aic f-dr">
+        <ul class="f-f f-jsb f-aic f-dr f-w">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Tutorials</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Login</a></li>
+        </ul>
+      </nav>
+      <div class="burger f-f f-dr f-jc f-aic">
+        <i class="fas fa-bars"></i>
       </div>
     </header>
 
     <main class="f-f f-jc f-aic f-dc">
-      <section class="hero f-f f-jc f-aic f-dc">
-        <h1>Aqmeter</h1>
-        <p>Quick online access for your utility providers.</p>
-        <div class="f-f f-dr">
-          <button><a href="#">Register</a></button>
-          <button><a href="#">Learn More</a></button>
+      <section class="hero f-f f-jc f-aic f-dr">
+        <div class="f-f f-dc f-jc f-aic">
+          <h1>Aqmeter</h1>
+          <p>Quick online access for your utility providers.</p>
+          <div class="f-f f-dr f-w f-jc">
+            <button><a href="#">Register</a></button>
+            <button><a href="#">Learn More</a></button>
+          </div>
         </div>
       </section>
 
@@ -62,7 +67,9 @@
 
       <section class="card grid">
         <div class="grid-cell f-f f-jc f-aic f-dc">
-          <div class="icon f-f f-jc f-aic"><i class="fas fa-bolt"></i></div>
+          <div class="icon f-f f-jc f-aic">
+            <i class="fas fa-bolt"></i>
+          </div>
           <h3>Elit ullamcorper</h3>
           <p>
             Aliquam malesuada bibendum arcu vitae elementum curabitur vitae.
@@ -98,7 +105,7 @@
         </div>
       </section>
 
-      <section class="mini-wrapper f-f f-jsb f-ais f-dr">
+      <section class="mini-wrapper f-f f-jsb f-ais f-dr f-w">
         <div class="card mini f-f f-jsb f-aic f-dc">
           <img
             src="./img/pic02.jpg"
@@ -111,7 +118,7 @@
               feugiat pretium nibh. Tortor vitae purus faucibus ornare
               suspendisse sed nisi.
             </p>
-            <a href="#"><button>Learn More</button></a>
+            <button><a href="#">Learn More</a></button>
           </div>
         </div>
 
@@ -124,13 +131,13 @@
               imperdiet nulla malesuada. Facilisis gravida neque convallis a
               cras semper.
             </p>
-            <a href="#"><button>Learn More</button></a>
+            <button><a href="#">Learn More</a></button>
           </div>
         </div>
       </section>
 
-      <section class="card">
-        <div class="card-content stats">
+      <section class="card stats">
+        <div class="card-content">
           <h3>Table</h3>
           <p>A simple table example:</p>
 
@@ -142,7 +149,6 @@
                 <th>Price</th>
               </tr>
             </thead>
-
             <tbody>
               <tr>
                 <td>Name 1</td>
@@ -170,7 +176,6 @@
                 <td>25.99</td>
               </tr>
             </tbody>
-
             <tfoot>
               <tr>
                 <td colspan="2"></td>
@@ -178,6 +183,7 @@
               </tr>
             </tfoot>
           </table>
+
         </div>
       </section>
     </main>
@@ -187,7 +193,7 @@
       <p>
         Quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis.
       </p>
-      <form class="f-f f-dr f-aic f-jc">
+      <form class="f-f f-dr f-aic f-jc f-w">
         <input type="email" placeholder="Email Address" />
         <input type="submit" value="Sign Up" />
       </form>
@@ -200,7 +206,7 @@
       </div>
 
       <form class="card f-f f-dc f-ais">
-        <div class="f-f f-dr f-jsb">
+        <div class="f-f f-dr f-jsb f-w">
           <input type="text" id="name" name="name" placeholder="Name" />
           <input type="email" id="email" name="email" placeholder="Email" />
         </div>
@@ -211,9 +217,9 @@
           placeholder="Your message here ..."
           rows="5"
         ></textarea>
-
         <input type="submit" id="submit" value="Send Message" />
       </form>
+
     </section>
 
     <footer>
@@ -240,7 +246,7 @@
         </ul>
       </div>
       <div class="copyright">
-        <ul class="f-f f-dr f-jc">
+        <ul class="f-f f-dr f-jc f-w">
           <li><span>&copy; Setmobile SRL. All rights reserved.</span></li>
           <li>
             <span
@@ -253,5 +259,6 @@
         </ul>
       </div>
     </footer>
+    
   </body>
 </html>
