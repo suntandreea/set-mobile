@@ -1,30 +1,30 @@
 import './Header.scss';
 
 function Header() {
-  const htmlElem = document.querySelector('html');
-  const menuElem = document.querySelector('.menu');
-  const navElem = document.querySelector('nav');
-  const menuBtn = document.querySelector('.burger');
+  // const htmlElem = document.querySelector('html');
+  // const menuElem = document.querySelector('.menu');
+  // const navElem = document.querySelector('nav');
+  // const menuBtn = document.querySelector('.burger');
 
-  window.addEventListener('scroll', () => {
-    const scroll = htmlElem.scrollTop;
-    const height = window.innerHeight;
-    if (scroll > height) {
-      menuElem.classList.add('accent');
-    } else {
-      menuElem.classList.remove('accent');
-    }
-  });
+  // window.addEventListener('scroll', () => {
+  //   const scroll = htmlElem.scrollTop;
+  //   const height = window.innerHeight;
+  //   if (scroll > height) {
+  //     menuElem.classList.add('accent');
+  //   } else {
+  //     menuElem.classList.remove('accent');
+  //   }
+  // });
 
-  menuBtn.addEventListener('click', () => {
-    if (navElem.classList.contains('visible')) {
-      navElem.classList.remove('visible');
-      menuBtn.classList.remove('rotate');
-    } else {
-      navElem.classList.add('visible');
-      menuBtn.classList.add('rotate');
-    }
-  });
+  // menuBtn.addEventListener('click', () => {
+  //   if (navElem.classList.contains('visible')) {
+  //     navElem.classList.remove('visible');
+  //     menuBtn.classList.remove('rotate');
+  //   } else {
+  //     navElem.classList.add('visible');
+  //     menuBtn.classList.add('rotate');
+  //   }
+  // });
 
   return (
     <div>

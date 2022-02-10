@@ -1,22 +1,28 @@
+import { useRef } from 'react';
+import { useState } from 'react';
 import './ContactForm.scss';
 
 function ContactForm() {
-  const formElem = document.getElementById('contact');
-  const inputName = document.getElementById('name');
-  const inputEmail = document.getElementById('email');
-  const inputSubject = document.getElementById('subject');
-  const textarea = document.getElementById('comments');
-  const submitBtn = document.getElementById('submit');
-  const confirmation = document.getElementById('confirmation');
+  const nameInputRef = useRef();
+  const emailInputRef = useRef();
+  const subjectInputRef = useRef();
+  const textareaRef = useRef();
 
-  function onSubmit(event) {
+  const [clicked, setClicked] = useState('');
+
+  function submitHandler(event) {
     event.preventDefault();
-    formElem.checkValidity();
+
+    const enteredName = nameInputRef.current.value;
+    const enteredEmail = emailInputRef.current.value;
+    const enteredSubject = subjectInputRef.current.value;
+    const enteredMessage = textareaRef.current.value;
+    
     const formData = {
-      name: inputName.value,
-      email: inputEmail.value,
-      subject: inputSubject.value,
-      message: textarea.value,
+      name: enteredName,
+      email: enteredEmail,
+      subject: enteredSubject,
+      message: enteredMessage,
     };
 
     console.log(formData);
@@ -31,16 +37,16 @@ function ContactForm() {
         },
       }
     ).then((response) => {
-      if (confirmation.classList.contains('success')) {
-        confirmation.classList.remove('success');
-      } else {
-        confirmation.classList.add('success');
-      }
+      clicked ? setClicked('') : setClicked('confirmation success');
+      // if (setMessageSent) {
+      //   confirmationMessage.classList.remove('success');
+      // } else {
+      //   confirmationMessage.classList.add('success');
+      //   setMessageSent(false);
+      // }
       console.log(response);
     });
   }
-
-  submitBtn.addEventListener('click', onSubmit);
 
   return (
     <section className="contact f-f f-dc f-aic" id="newsletter">
@@ -49,20 +55,43 @@ function ContactForm() {
         <p>At risus viverra adipiscing at in tellus integer.</p>
       </div>
 
-      <form className="card f-f f-dc f-ais" id="contact">
+      <form className="card f-f f-dc f-ais" onSubmit={submitHandler}>
         <div className="f-f f-dr f-jsb f-w">
-          <input type="text" id="name" name="name" placeholder="Name" />
-          <input type="email" id="email" name="email" placeholder="Email" />
+          <input
+            type="text"
+            required
+            id="name"
+            name="name"
+            placeholder="Name"
+            ref={nameInputRef}
+          />
+          <input
+            type="email"
+            required
+            id="email"
+            name="email"
+            placeholder="Email"
+            ref={emailInputRef}
+          />
         </div>
-        <input type="text" id="subject" name="subject" placeholder="Subject" />
+        <input
+          type="text"
+          required
+          id="subject"
+          name="subject"
+          placeholder="Subject"
+          ref={subjectInputRef}
+        />
         <textarea
           name="comments"
+          required
           id="comments"
           placeholder="Your message here ..."
           rows="5"
+          ref={textareaRef}
         ></textarea>
         <input type="submit" id="submit" value="Send Message" />
-        <span id="confirmation">Your message was sent!</span>
+        <span className={clicked || 'confirmation' }>Your message was sent!</span>
       </form>
     </section>
   );
