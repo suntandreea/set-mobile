@@ -1,40 +1,42 @@
+import { useEffect, useState } from 'react';
 import './Header.scss';
 
 function Header() {
-  // const htmlElem = document.querySelector('html');
-  // const menuElem = document.querySelector('.menu');
-  // const navElem = document.querySelector('nav');
-  // const menuBtn = document.querySelector('.burger');
+  const [scrolled, setScrolled] = useState(false);
+  const [clicked, setClicked] = useState('');
 
-  // window.addEventListener('scroll', () => {
-  //   const scroll = htmlElem.scrollTop;
-  //   const height = window.innerHeight;
-  //   if (scroll > height) {
-  //     menuElem.classList.add('accent');
-  //   } else {
-  //     menuElem.classList.remove('accent');
-  //   }
-  // });
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    const height = window.innerHeight;
+    if (offset > height) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
 
-  // menuBtn.addEventListener('click', () => {
-  //   if (navElem.classList.contains('visible')) {
-  //     navElem.classList.remove('visible');
-  //     menuBtn.classList.remove('rotate');
-  //   } else {
-  //     navElem.classList.add('visible');
-  //     menuBtn.classList.add('rotate');
-  //   }
-  // });
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+  });
+
+  let navbarClasses = ['menu f-f f-jsb f-aic f-dr'];
+  if (scrolled) {
+    navbarClasses.push('accent');
+  }
+
+  function handleMobileMenu() {
+    clicked ? setClicked('') : setClicked('f-f f-jc f-aic f-dr visible');
+  }
 
   return (
     <div>
       <div className="banner"></div>
-      <header className="menu f-f f-jsb f-aic f-dr">
+      <header className={navbarClasses.join(' ')}>
         <img
           src="https://aqmeter.com/images/aqmeterLogoWhite.png"
           alt="Aqmeter logo"
         />
-        <nav className="f-f f-jc f-aic f-dr">
+        <nav className={clicked || 'f-f f-jc f-aic f-dr'}>
           <ul className="f-f f-jsb f-aic f-dr f-w">
             <li>
               <a href="#">Home</a>
@@ -56,8 +58,9 @@ function Header() {
             </li>
           </ul>
         </nav>
-        <div className="burger f-f f-dr f-jc f-aic">
+        <div className="burger f-f f-dr f-jc f-aic" onClick={handleMobileMenu}>
           <i className="fas fa-bars"></i>
+          <i className="fa-solid fa-xmark"></i>
         </div>
       </header>
     </div>
