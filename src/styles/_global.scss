@@ -54,3 +54,9 @@ input[type='submit'] {
   color: var(--main-light-color);
   margin: 20px 10px;
 }
+
+button {
+  i + span {
+    margin-left: 20px;
+  }
+}

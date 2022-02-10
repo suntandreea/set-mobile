@@ -9,7 +9,8 @@ function ContactForm() {
   const textareaRef = useRef();
 
   const [clicked, setClicked] = useState('');
-
+  // ^ to check  if the form was submited 
+  
   function submitHandler(event) {
     event.preventDefault();
 
@@ -25,8 +26,6 @@ function ContactForm() {
       message: enteredMessage,
     };
 
-    console.log(formData);
-
     fetch(
       'https://aqmeter-aab59-default-rtdb.firebaseio.com/contact-form.json',
       {
@@ -38,12 +37,6 @@ function ContactForm() {
       }
     ).then((response) => {
       clicked ? setClicked('') : setClicked('confirmation success');
-      // if (setMessageSent) {
-      //   confirmationMessage.classList.remove('success');
-      // } else {
-      //   confirmationMessage.classList.add('success');
-      //   setMessageSent(false);
-      // }
       console.log(response);
     });
   }
